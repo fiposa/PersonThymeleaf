@@ -2,9 +2,11 @@ package feliks.personthymeleaf.model;
 
 
 import jakarta.persistence.*;
+import org.springframework.stereotype.Component;
 
 @Entity
-@Table (name = "Person")
+//@Component
+@Table
 public class Person {
     @Id
     @Column
