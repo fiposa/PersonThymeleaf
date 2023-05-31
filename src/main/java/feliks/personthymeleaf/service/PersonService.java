@@ -33,6 +33,18 @@ public class PersonService {
         return Optional.ofNullable(persons.get(1));
     }
 
+    public Person show(int id) {
+        return findAll().stream().filter(person -> person.getId()==id).findAny().orElse(null);
+
+    }
+
+    public void save (Person person){
+        personRepository.save(person);
+        System.out.println("person saved");
+    }
+
+
+
 
 
 

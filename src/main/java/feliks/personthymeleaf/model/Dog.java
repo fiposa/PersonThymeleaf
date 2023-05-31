@@ -1,38 +1,26 @@
 package feliks.personthymeleaf.model;
 
-
 import jakarta.persistence.*;
 import org.springframework.stereotype.Component;
 
-import java.util.Objects;
-
 @Entity
-//@Component
 @Table
-public class Person {
-    @Id
-    @Column
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+//@Component
 
+public class Dog {
+    @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column
     int id;
 
     @Column
     String name;
 
-    @Column
-    int age;
-
-    @OneToOne
-    Dog dog;
-
-    public Person() {
+    public Dog() {
     }
 
-    public Person(int id, String name, int age, Dog dog) {
-        this.id = id;
+    public Dog(String name) {
         this.name = name;
-        this.age = age;
-        this.dog = dog;
     }
 
     public int getId() {
@@ -51,20 +39,11 @@ public class Person {
         this.name = name;
     }
 
-    public int getAge() {
-        return age;
-    }
-
-    public void setAge(int age) {
-        this.age = age;
-    }
-
-    public Dog getDog() {
-        return dog;
-    }
-
-    public void setDog(Dog dog) {
-        this.dog = dog;
+    @Override
+    public String toString() {
+        return "Dog{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }
-
